@@ -115,12 +115,12 @@ svg{
     justify-content: space-around;
     align-items: center;
     margin: 30px auto;
-    padding: 15px 30px;
+    padding: 25px 50px;
   }
 
   .nav {
     background-color: #d9d6dc;
-    padding: 15px 30px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -162,7 +162,7 @@ svg{
 
   .nav {
     background-color: #d9d6dc;
-    padding: 15px 30px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -195,7 +195,7 @@ svg{
 
   .nav {
     background-color: #d9d6dc;
-    padding: 15px 30px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -228,7 +228,7 @@ svg{
 
   .nav {
     background-color: #d9d6dc;
-    padding: 15px 30px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

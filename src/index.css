@@ -1,30 +1,27 @@
 *{
   font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
 .card{
   background-color: yellow;
   padding: 20px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-radius: 12px;
 }
 
 .card-ctr{
-  padding: 10px 10px;
+  background-color: goldenrod;
+  width: 55%;
+  padding: 8px 10px;
   margin-top: 20px;
   font-weight: 400;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 
-input{
-  width: 60%;
-  padding: 10px 4px;
-  font-size: 17px;
-  border: none;
-  outline: none;
-  background-color: white;
-  border-radius: 12px;
+.card-ctr h3{
+  color: white;
 }
 
 .submitBtn{
@@ -38,10 +35,14 @@ input{
   cursor: pointer;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+input{
+  width: 30%;
+  padding: 10px 4px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 12px;
 }
 
 .nav p {
@@ -93,4 +94,143 @@ svg{
 
 .intro-sec h3{
   text-align: center;
+}
+
+@media only screen and (max-width : 900px ) {
+  .card input{
+    width: 60%;
+  }
+
+  .card{
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    margin: 50px auto;
+  }
+
+  .card-ctr{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    padding: 15px 30px;
+  }
+
+  .nav {
+    background-color: #d9d6dc;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  input{
+    width: 50%;
+    padding: 10px 4px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width : 600px ) {
+  .card input{
+    width: 50%;
+  }
+
+  .card{
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+    margin: 50px auto;
+  }
+
+  .card-ctr{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    padding: 15px 30px;
+    width: 45%;
+  }
+
+  .nav {
+    background-color: #d9d6dc;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width : 450px ) {
+  .card input{
+    width: 50%;
+  }
+
+  .card{
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin: 50px auto;
+    padding: 15px 50px;
+  }
+
+  .card-ctr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+    padding: 15px 30px;
+    width: 50%;
+  }
+
+  .nav {
+    background-color: #d9d6dc;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width : 900px ) {
+  .card input{
+    width: 50%;
+  }
+
+  .card{
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin: 50px auto;
+    padding: 30px 70px;
+  }
+
+  .card-ctr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+    padding: 30px 50px;
+    width: 50%;
+  }
+
+  .nav {
+    background-color: #d9d6dc;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }

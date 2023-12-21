@@ -24,11 +24,11 @@ const Note = ({Note, getNotes}) => {
   }
 
   return (
-    <div className='card card-ctr' >
+    <div className='card-ctr' >
         <h3> + {text} </h3>
-        <div onClick={deleteNote} >
+        <div onClick={deleteNote} className='del-btn' >
           <Deleteicon />
-        </div>
+        </div>        
     </div>
   )
 }

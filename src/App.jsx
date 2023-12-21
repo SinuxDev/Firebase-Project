@@ -62,7 +62,7 @@ function App() {
         </>) 
       }
       {
-        noted.length < 1 && <Intro /> 
+        noted.length ==0 && <Intro /> 
       }
     </>
   );

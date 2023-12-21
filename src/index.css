@@ -44,16 +44,53 @@ input{
   justify-content: space-between;
 }
 
-.nav button{
-  cursor: pointer;
-  padding: 4px;
-  background-color: white;
-  outline: none;
+.nav p {
+  background-color: blueviolet;
+  color: black;
+  border: none;
+  padding: 10px 6px;
   border-radius: 12px;
+  font-size: 17px;
   font-weight: 600;
+  cursor: default;
 }
 
 .logo{
   color: blueviolet;
   font-size: 30px;
+}
+
+.message{
+  text-align: center;
+  color: blueviolet;
+  font-size: 30px;
+  max-width: 20px 0px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.error{
+  text-align: center;
+  color: blueviolet;
+  font-size: 30px;
+  max-width: 20px 0px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+svg{
+  cursor: pointer;
+}
+
+.intro-sec{
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: yellow;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+}
+
+.intro-sec h3{
+  text-align: center;
 }

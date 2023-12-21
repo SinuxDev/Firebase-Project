@@ -1,9 +1,34 @@
 import React from 'react'
+import Deleteicon from '../svgs/Deleteicon'
 
-const Note = ({Note}) => {
+const Note = ({Note, getNotes}) => {
+  //destructor note object
+  const {id,data : text} = Note
+
+  // delete notesss
+  const deleteNote = async (e) => {
+    try{
+      const response = await fetch(`https://wenoted-192e7-default-rtdb.firebaseio.com/notes/${id}.json`,
+        {
+          method : "DELETE",
+        });
+
+      if(!response.ok){
+        throw new Error("Failed to Delete")
+      }
+
+      getNotes();
+    }catch(err){
+      alert(err.message);
+    }
+  }
+
   return (
     <div className='card card-ctr' >
-        <h3> + {Note} </h3>
+        <h3> + {text} </h3>
+        <div onClick={deleteNote} >
+          <Deleteicon />
+        </div>
     </div>
   )
 }

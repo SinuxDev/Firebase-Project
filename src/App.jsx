@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import AddNote from "./Components/AddNote";
 import Nav from "./Components/Nav";
 import Note from "./Components/Note";
+import Intro from "./Components/Intro";
 
 function App() {
   // define state
   const [noted,setNoted] = useState([]);
+  const [loading,setLoading] = useState(false);
+  const [error,setError]  = useState(false);
 
   //get notes when we start
   useEffect(()=>{
@@ -14,27 +17,52 @@ function App() {
 
   //get notes
   const getNotes = async () => {
-    const response = await fetch('https://wenoted-192e7-default-rtdb.firebaseio.com/notes.json');
-    const notes = await response.json();
+    setLoading(true);
     
-    const modifiedNote = [];
+    try{
+      const response = await fetch('https://wenoted-192e7-default-rtdb.firebaseio.com/notes.json');
+      
+      if(!response.ok){
+        throw new Error("Can't connect to the database");
+      }
 
-    for(const key in notes){
-      modifiedNote.push(notes[key])
+      const notes = await response.json();
+      const modifiedNote = [];
+
+      for(const key in notes){
+        modifiedNote.push({
+          id : key,
+          data : notes[key],
+        });
+      }
+      
+      setNoted(modifiedNote);
+    }catch(err){
+      setError(err.message);
     }
-    
-    setNoted(modifiedNote);
-
+    setLoading(false);
   };
 
   return (
     <>
-      <Nav getNotes = {getNotes} />
-      <AddNote />
+      <Nav totalNotes = {noted.length} />
       {
-         noted.map((note,index) => (
-            <Note key = {index} Note = {note} />
-         ))
+        loading && !error && <p className="message" >Getting Notes......</p>
+      }
+      {
+        error && !loading && <p className="error message" > {error} </p>
+      }
+      {
+        !loading && !error && (
+        <>
+          <AddNote getNotes = {getNotes} />
+         {noted.map((note,index) => (
+            <Note key = {index} Note = {note} getNotes = {getNotes} />
+         ))}         
+        </>) 
+      }
+      {
+        noted.length < 1 && <Intro /> 
       }
     </>
   );

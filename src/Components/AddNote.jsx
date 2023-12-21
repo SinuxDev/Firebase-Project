@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const AddNote = () => {
+const AddNote = ({getNotes}) => {
 
     // define state
     const [note,setNote] = useState("");
@@ -19,6 +19,7 @@ const AddNote = () => {
             });
 
         setNote("");
+        getNotes();
         }catch(err)
         {
             alert("Something went wrong!!!");
@@ -33,7 +34,7 @@ const AddNote = () => {
             {
                 (e) => setNote(e.target.value)
             } />
-            <button className='submitBtn' >Add Note</button>
+            <button className='submitBtn'>Add Note</button>
         </form>
     </section>
   );

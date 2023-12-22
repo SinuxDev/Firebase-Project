@@ -8,6 +8,12 @@ const AddNote = ({getNotes}) => {
     // add new note
     const addNote = async (e) =>{
         e.preventDefault();
+
+        if(note.trim().length == 0){
+            alert("Please enter an valid note")
+            return;
+        }
+        
         try{
             await fetch('https://wenoted-192e7-default-rtdb.firebaseio.com/notes.json',
             {
